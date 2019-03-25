@@ -230,20 +230,18 @@
 <script>
 function window_onload() {
         //do something
-        setTimeout(function() {alert("click top, bottom, left, right to train");document.body.style.display ="none";setTimeout(function(){document.body.style.display="block"},10000)}, 10);
-        
-    }
+setTimeout(function() {alert("click top, bottom, left, right to train");document.body.style.display ="none";setTimeout(function(){document.body.style.display="block"},10000)}, 10);    }
 function show(){
 	
 }
 function pageScrolldown() {
         window.scrollBy(0,1); // horizontal and vertical scroll increments
-        scrolldelay = setTimeout('pageScrolldown()',1000); // scrolls every 100 milliseconds
+        scrolldelay = setTimeout('pageScrolldown()',300); // scrolls every 100 milliseconds
         console.log("down")
 }
 function pageScrollup() {
         window.scrollBy(0,-1); // horizontal and vertical scroll increments
-        scrolldelay = setTimeout('pageScrollup()',1000); // scrolls every 100 milliseconds
+        scrolldelay = setTimeout('pageScrollup()',300); // scrolls every 100 milliseconds
         console.log("up")
 }
 
@@ -257,7 +255,7 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     if (yprediction>500){
     	pageScrolldown()
     }
-    if (yprediction<250){
+    if (yprediction<180){
     	pageScrollup()
     }
 }).begin();
